@@ -1,5 +1,5 @@
 # cse210-student-template
-This is the starter code for Tyler's CSE 210 class. Here's some more changes
+This is the starter code for Tyler's CSE 210 class. Here's some more changes again.
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
