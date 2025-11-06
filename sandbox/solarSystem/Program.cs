@@ -2,7 +2,6 @@
 {
     static void Main()
     {
-        //Console.WriteLine("Bonjour tout le meonde");
         Planet mercury = new Planet();
         mercury._name = "Mercury";
         mercury._diameter = 1234.343;
