@@ -16,9 +16,12 @@ class Program
             switch (userSelection)
             {
                 case 1:
-                //Create a new Entry object
-                //Call create on that object
-                //Add the entry to the journal
+                    //Create a new Entry object
+                    //Call create on that object
+                    //Add the entry to the journal
+                    Entry entry = new Entry();
+                    entry.GetPrompt();
+                    entry.inputEntry();
                     break;
                 case 2:
                 //Call journal.Display()
