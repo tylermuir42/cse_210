@@ -6,8 +6,10 @@ class Program
     {
         Menu journalMenu = new Menu();
         int userSelection;
-
         bool done = false;
+
+        Entry entry = null;
+        Journal journal = new Journal();
 
         do
         {
@@ -19,18 +21,21 @@ class Program
                     //Create a new Entry object
                     //Call create on that object
                     //Add the entry to the journal
-                    Entry entry = new Entry();
+                    entry = new Entry();
                     entry.GetPrompt();
                     entry.inputEntry();
+                    journal.AddEntry(entry);
                     break;
                 case 2:
-                //Call journal.Display()
+                    //Call journal.Display()
+                    //journal = new Journal();
+                    journal.Display();
                     break;
                 case 3:
-                //Save to a file
+                    //Save to a file
                     break;
                 case 4:
-                //Read from a file
+                    //Read from a file
                     break;
                 case 5:
                     done = true;
