@@ -36,6 +36,9 @@ class Program
                     break;
                 case 3:
                     //Save to a file
+                    Console.WriteLine("What is the filename? (i.e journal.txt): ");
+                    string saveFile = Console.ReadLine();
+                    journal.SaveToFile(saveFile);
                     break;
                 case 4:
                     //Read from a file
