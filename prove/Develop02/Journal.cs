@@ -31,7 +31,7 @@ class Journal
         Console.WriteLine("Save complete!");
     }
 
-    public void LoadFromFile(string filename)
+    public string LoadFromFile(string filename)
     {
         Console.WriteLine($"Loading from {filename}");
         _entries.Clear();
@@ -48,7 +48,9 @@ class Journal
             loadedEntry._entryText = parts[2];
 
             _entries.Add(loadedEntry);
+            Display();
         }
         Console.WriteLine("Load complete");
+        return _entries.ToString();
     }
 }
