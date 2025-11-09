@@ -42,6 +42,9 @@ class Program
                     break;
                 case 4:
                     //Read from a file
+                    Console.WriteLine("What file would you like to load?: ");
+                    string loadFile = Console.ReadLine();
+                    journal.LoadFromFile(loadFile);
                     break;
                 case 5:
                     done = true;
