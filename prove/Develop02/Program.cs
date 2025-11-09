@@ -19,16 +19,19 @@ class Program
             {
                 case 1:
                     //Create a new Entry object
-                    //Call create on that object
-                    //Add the entry to the journal
                     entry = new Entry();
+                    
+                    //Call create on that object
                     entry.GetPrompt();
                     entry.inputEntry();
+
+                    entry._date = DateTime.Now.ToShortDateString();
+
+                    //Add the entry to the journal
                     journal.AddEntry(entry);
                     break;
                 case 2:
                     //Call journal.Display()
-                    //journal = new Journal();
                     journal.Display();
                     break;
                 case 3:

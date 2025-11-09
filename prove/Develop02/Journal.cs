@@ -1,18 +1,16 @@
 class Journal
 {
-    DateTime theCurrentTime = DateTime.Now;
-    //public string dateText = theCurrentTime.ToShortDateString();
-
     private List<Entry> _entries = new List<Entry>();
-    public void AddEntry(Entry entry)
+
+    public void AddEntry(Entry userInput)
     {
-        _entries.Add(entry);
+         _entries.Add(userInput);
     }
     public void Display()
     {
         foreach (Entry entry in _entries)
         {
-            Console.WriteLine(entry.inputEntry());
+            entry.Display();
         }
     }
 }
