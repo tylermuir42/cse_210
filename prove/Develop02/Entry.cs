@@ -12,6 +12,7 @@ class Entry
     public string _promptText;
     public string _entryText;
     public string _date;
+    public string _reminder = DateTime.Now.AddDays(1).ToShortDateString();
 
     public string GetPrompt()
     {
@@ -34,6 +35,10 @@ class Entry
     {
         Console.WriteLine($"Date: {_date}");
         Console.WriteLine($"Prompt: {_promptText}");
-        Console.WriteLine($"{_entryText} \n");
+        Console.WriteLine($"{_entryText}\n");
+        Console.WriteLine("Remember to write again on: ");
+        Console.WriteLine(_reminder);
+        Console.WriteLine("");
+        //_reminder = DateTime.Now.AddDays(1).ToShortDateString();
     }
 }
