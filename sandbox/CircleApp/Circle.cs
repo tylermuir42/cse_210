@@ -1,6 +1,18 @@
 class Circle
 {
     private double _radius;
+
+    public Circle()
+    {
+        Console.WriteLine("Default constructor");
+        _radius = 0;
+    }
+
+    public Circle(double radius)
+    {
+        Console.WriteLine("Not the default");
+        SetRadius(radius);
+    }
     public void SetRadius(double radius)
     {
         if (radius < 0)
@@ -13,6 +25,7 @@ class Circle
             _radius = radius;
         }
     }
+
     public double GetCircleArea()
     {
         return 3.1415 * _radius * _radius;
