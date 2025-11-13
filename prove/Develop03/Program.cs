@@ -16,10 +16,12 @@ class Program
         Console.WriteLine(myWord.GetWordString());
         myWord.DisplayWord();
 
-        Reference myReference = new Reference();
-        Console.WriteLine(myReference.ScriptureReference("John", 3, 16));
+        var reference1 = new Reference("John", 3, 16);
+        Console.WriteLine(reference1.GetScriptureReference());
+        reference1.ShowScriptureReference();
 
-        Reference reference2 = new Reference();
-        Console.WriteLine(reference2.ScriptureReference("Poverbs", 3, 5, 6));
+        var reference2 = new Reference("Proverbs", 3, 5, 6);
+        Console.WriteLine(reference2.GetScriptureReference());
+        reference2.ShowScriptureReference();
     }
 }
