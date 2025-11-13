@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 class Word
 {
     private string _word;
@@ -7,6 +9,16 @@ class Word
     {
         _word = word;
         _isHidden = false;
+    }
+
+    public bool IsHidden()
+    {
+        return _isHidden;
+    }
+    
+    public void HideWord()
+    {
+        _isHidden = true;
     }
 
     public void DisplayWord()
