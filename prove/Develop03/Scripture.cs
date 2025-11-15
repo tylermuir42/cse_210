@@ -55,21 +55,21 @@ class Scripture
 
         if (_startVerse == 0 && _endVerse == 0)
         {
-            referenceLine =  $"{_bookName} {_chapter}: {_verse} \n {_text}";
+            referenceLine =  $"{_bookName} {_chapter}: {_verse}";
         }
         else
         {
-            referenceLine = $"{_bookName} {_chapter}: {_startVerse}-{_endVerse} \n {_text}";
+            referenceLine = $"{_bookName} {_chapter}: {_startVerse}-{_endVerse}";
         }
 
-        string combined = "";
+        string scriptureText = "";
 
         foreach (Word w in _words)
         {
-            combined += w.ToString() + " ";
+            scriptureText += w.GetWordString() + " ";
         }
 
-        return referenceLine + combined.TrimEnd();
+        return referenceLine + "\n" + scriptureText.TrimEnd();
     }
 
     public bool HideWords()
