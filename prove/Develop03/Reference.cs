@@ -30,10 +30,10 @@ class Reference
     {
         return GetScriptureReferenceString();
     }
-    
+
     private string GetScriptureReferenceString()
     {
-        if(_startVerse == 0 && _endVerse == 0)
+        if (_startVerse == 0 && _endVerse == 0)
         {
             return $"{_bookName} {_chapter}: {_verse}";
         }
