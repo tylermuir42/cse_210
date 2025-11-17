@@ -94,11 +94,6 @@ class Scripture
         return true;
     }
 
-    // private int NumberOfHiddenWords()
-    // {
-    //     return 3;
-    // }
-    
     private void ConvertToWords(string _text)
     {
         string[] parts = _text.Split(' ');
