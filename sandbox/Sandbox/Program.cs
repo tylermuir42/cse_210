@@ -19,19 +19,35 @@ class Program
         // }
 
         int count = duration;
+        // Console.CursorVisible = false;
+        // while(DateTime.Now < endTime)
+        // {
+        //     Console.Write(count--);
+        //     Thread.Sleep(1000);
+        //     if(count >= 9)
+        //     {
+        //         Console.Write("b\b. \b\b");
+        //     }
+        //     else
+        //     {
+        //         Console.Write("\b");
+        //     }
+        //     Console.Write("\b");
+        // }
+        // Console.CursorVisible = true;
+
+        Console.CursorVisible = false;
+        string animationString2 = "(^_^)(-_-)";
+
         while(DateTime.Now < endTime)
         {
-            Console.Write(count--);
-            Thread.Sleep(1000);
-            if(count >= 9)
-            {
-                Console.Write("b\b. \b\b");
-            }
-            else
-            {
-                Console.Write("\b");
-            }
-            Console.Write("\b");
+            Console.Write(animationString2[0..5]);
+            Thread.Sleep(sleepTime);
+            Console.Write("\b\b\b\b\b\b");
+            Console.Write(animationString2[5..]);
+            Thread.Sleep(sleepTime);
+            Console.Write("\b\b\b\b\b\b");
         }
+        Console.CursorVisible = true;
     }
 }
