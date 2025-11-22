@@ -59,17 +59,17 @@ class ReflectionActivity : BaseActivity
         DisplayEnding();
     }
 
-    private string GetRandomPrompt()
-    {
-        Random random = new Random();
-        int index = random.Next(_prompts.Count);
-        return _prompts[index];
-    }
-
     private string GetRandomQuestion()
     {
         Random random = new Random();
         int index = random.Next(_questions.Count);
         return _questions[index];
+    }
+
+    private string GetRandomPrompt()
+    {
+        Random random = new Random();
+        int index = random.Next(_prompts.Count);
+        return _prompts[index];
     }
 }

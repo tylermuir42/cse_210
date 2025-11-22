@@ -24,10 +24,10 @@ class Program
                     ReflectionActivity reflectionActivity = new ReflectionActivity("Reflection Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience.", 10);
                     reflectionActivity.StartReflectionActicity();
                     break;
-                // case 3:
-                //     ListingActivity listingActivity = new ListingActivity();
-                //     listingActivity.Start();
-                //     break;
+                case 3:
+                    ListingActivity listingActivity = new ListingActivity("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 10);
+                    listingActivity.StartListingActivity();
+                    break;
                 case 4:
                     Console.WriteLine("Exiting the program. Goodbye!");
                     Thread.Sleep(2000);
