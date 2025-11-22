@@ -20,10 +20,10 @@ class Program
                     breathingActivity.DisplayEnding();
                     Thread.Sleep(10000);
                     break;
-                // case 2:
-                //     ReflectingActivity reflectingActivity = new ReflectingActivity();
-                //     reflectingActivity.Start();
-                //     break;
+                case 2:
+                    ReflectionActivity reflectionActivity = new ReflectionActivity("Reflection Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience.", 10);
+                    reflectionActivity.StartReflectionActicity();
+                    break;
                 // case 3:
                 //     ListingActivity listingActivity = new ListingActivity();
                 //     listingActivity.Start();
