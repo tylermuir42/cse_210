@@ -2,14 +2,14 @@ class BaseActivity
 {
     string _name = "";
     string _description = "";
-    int _duration;
+    int _duration = 0;
     DateTime _endTime;
 
     public BaseActivity(string name, string description, int duration)
     {
         _name = name;
         _description = description;
-        _duration = 0;
+        _duration = duration;
         _endTime = DateTime.Now;
     }
 
