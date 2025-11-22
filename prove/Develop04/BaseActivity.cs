@@ -20,13 +20,13 @@ class BaseActivity
 
     public void DisplayEnding()
     {
+        Console.WriteLine();
         Console.WriteLine("Well done!!");
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name} Activity.");
     }
 
     public void RunCountDown(string message, int seconds)
-    //Check this method for errors later!
     {
         Console.Write(message);
         for (int i = seconds; i > 0; i--)
@@ -39,7 +39,6 @@ class BaseActivity
     }
 
     public void DisplaySpinner(string message, int duration)
-    //Check this one too!
     {
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(duration);
