@@ -7,6 +7,9 @@ class Menu
         while(repsonse < 1 || repsonse > 4)
         {
             Console.Clear();
+
+            Program.DisplayActivityStats();
+            
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Start Breathing Activity");
             Console.WriteLine("2. Start Reflecting Activity");
