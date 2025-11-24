@@ -1,43 +1,50 @@
+using System.Data;
+using System.Dynamic;
+using System.Runtime.ExceptionServices;
+
 class Person
 {
-    private string _firstName;
-    private string _lastName; 
+    private string _firstName = "";
+    private string _lastName = "";
     private int _age;
-    private int _weight;
+    private  int _weight;
 
     public Person(string firstName, string lastName, int age, int weight)
     {
         _firstName = firstName;
         _lastName = lastName;
-        _age = age;
-        _weight = weight;
-    }
-
-    private string PersonInformation()
-    {
-        return $"Name: {_firstName} {_lastName}, Age: {_age}, Weight: {_weight} lbs";
+        SetAge(age);
+        SetWeight(weight);
     }
 
     public string GetPersonInformation()
     {
-        return PersonInformation();
+        return $"{_firstName} {_lastName}, age: {_age}, weight: {_weight}";
     }
 
     public void SetAge(int age)
     {
-        _age = age;
-        if (_age > 0)
+        if (age < 0 || age > 124)
         {
+            Console.WriteLine("Invalid age");
             _age = 0;
+        }
+        else
+        {
+            _age = age;
         }
     }
 
     public void SetWeight(int weight)
     {
-        _weight = weight;
-        if (_weight > 0)
+        if (weight <= 0 || weight > 300)
         {
+            Console.WriteLine("Invalid weight");
             _weight = 0;
+        }
+        else
+        {
+            _weight = weight;
         }
     }
 }
