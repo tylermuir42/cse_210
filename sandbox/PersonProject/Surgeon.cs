@@ -14,4 +14,9 @@ class Surgeon : Doctor
     {
         return $"{GetPersonInformation()}, TItle: {_title}";
     }
+
+    public override string GetPersonInformation()
+    {
+        return $"{base.GetPersonInformation()}, TItle: {_title}";
+    }
 }

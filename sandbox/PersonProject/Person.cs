@@ -17,7 +17,7 @@ class Person
         SetWeight(weight);
     }
 
-    public string GetPersonInformation()
+    public virtual string GetPersonInformation()
     {
         return $"{_firstName} {_lastName}, age: {_age}, weight: {_weight}";
     }

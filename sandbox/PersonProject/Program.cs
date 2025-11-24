@@ -1,8 +1,11 @@
 ﻿class Program
 {
+    public static void DisplayPersonInformation(Person person)
+    {
+        Console.WriteLine(person.GetPersonInformation());
+    }
     static void Main(string[] args)
     {
-        Console.WriteLine("Ca va?");
         Person myPerson = new Person("Bob", "Bubba", 54, 287);
         Console.WriteLine(myPerson.GetPersonInformation());
 
@@ -20,6 +23,19 @@
         mySurgeon.SetAge(57);
         mySurgeon.SetWeight(198);
         Console.WriteLine(mySurgeon.GetSurgeonInformation());
+
+        Console.WriteLine("\n\n");
+
+        List<Person> myPeople = new List<Person>();
+        myPeople.Add(myPerson);
+        myPeople.Add(myPolice);
+        myPeople.Add(myDoctor);
+        myPeople.Add(mySurgeon);
+
+        foreach (Person person in myPeople)
+        {
+            DisplayPersonInformation(person);
+        } 
         
     }
 }
