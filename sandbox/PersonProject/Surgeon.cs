@@ -10,13 +10,14 @@ class Surgeon : Doctor
         _title = title;
     }
 
-    public string GetSurgeonInformation()
-    {
-        return $"{GetPersonInformation()}, TItle: {_title}";
-    }
 
     public override string GetPersonInformation()
     {
         return $"{base.GetPersonInformation()}, TItle: {_title}";
+    }
+
+    public override double GetSalary()
+    {
+        return base. GetSalary() + 150000.00;
     }
 }

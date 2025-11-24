@@ -2,7 +2,7 @@ using System.Data;
 using System.Dynamic;
 using System.Runtime.ExceptionServices;
 
-class Person
+abstract class Person
 {
     private string _firstName = "";
     private string _lastName = "";
@@ -47,4 +47,6 @@ class Person
             _weight = weight;
         }
     }
+
+    public abstract double GetSalary();
 }
