@@ -103,10 +103,17 @@ public class VaultManager
         Console.ReadKey();
     }
 
-    public void ListItemsWorkflow()
+    public void ListItemsWorkflow(AuthenticationService auth, string masterPassword)
     {
         Console.Clear();
-        Console.WriteLine("==== STORED ITEMS ====");
+        Console.WriteLine("==== Stored Items ====");
+
+        if (Items.Count == 0)
+        {
+            Console.WriteLine("Vault is empty.");
+            Console.ReadKey();
+            return;
+        }
 
         for (int i = 0; i < Items.Count; i++)
         {
@@ -114,7 +121,40 @@ public class VaultManager
             Console.WriteLine($"{i + 1}. [{item.GetItemType()}] {item.Title} -> {item.GetMaskedDisplay()}");
         }
 
-        Console.ReadKey();
+        Console.WriteLine("-----------------------");
+        Console.WriteLine("Press [R] to Reveal an item, or any other key to return to menu.");
+        ConsoleKeyInfo key = Console.ReadKey(true);
+
+        if (key.Key == ConsoleKey.R)
+        {
+            Console.WriteLine();
+            Console.Write("Verify master password to reveal: ");
+            string inputPass = Console.ReadLine();
+
+            if (auth.VerifyMasterPassword(inputPass))
+            {
+                Console.Write("Enter the ID number of the item to reveal: ");
+                if (int.TryParse(Console.ReadLine(), out int index) && index > 0 && index <= Items.Count)
+                {
+                    var selectedItem = Items[index - 1];
+                    Console.WriteLine("\n--- SECRET REVEALED ---");
+                    Console.WriteLine($"Title: {selectedItem.Title}");
+                    Console.WriteLine(selectedItem.GetFullDisplay());
+                    Console.WriteLine("-----------------------");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.WriteLine("Invalid item number.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Wrong Password! Access Denied.");
+            }
+            Console.WriteLine("Press any key to return to menu.");
+            Console.ReadKey();
+        }
     }
 
     public void SearchItemsWorkflow()
