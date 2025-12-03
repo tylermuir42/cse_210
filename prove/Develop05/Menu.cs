@@ -19,7 +19,7 @@ class Menu
             {
                 response = int.Parse(Console.ReadLine());
             }
-            catch (Exception ex)
+            catch
             {
                 Console.WriteLine("Invalid input. Please enter a number between 1 and 6.");
             }

@@ -90,7 +90,7 @@ class Goals
                             goal = new SimpleGoal(data[0], data[1], int.Parse(data[2]), bool.Parse(data[3]));
                             break;
                         case "Eternal Goal":
-                            goal = new EternalGoal(data[0], data[1], int.Parse(data[2]));
+                            goal = new EternalGoal(data[0], data[1], int.Parse(data[2]), int.Parse(data[3]));
                             break;
                         case "CheckList Goal":
                             goal = new CheckListGoal(data[0], data[1], int.Parse(data[2]), int.Parse(data[3]), int.Parse(data[4]), int.Parse(data[5]), bool.Parse(data[6]));
