@@ -1,15 +1,24 @@
+using System.Text;
+
 public class EncryptionService
 {
-    // NOTE: Replace this with real AES later.
-    // For now it's just a placeholder.
+    // Using a XOR encryption for simplicity. Not secure for real applications.
 
-    public string Encrypt(string plain, string key)
+    public string Encrypt(string input, string key)
     {
-        return plain; // Temporary
+        if (string.IsNullOrEmpty(input)) return input;
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < input.Length; i++)
+        {
+            char c = (char)(input[i] ^ key[i % key.Length]);
+            sb.Append(c);
+        }
+        return sb.ToString();
     }
 
     public string Decrypt(string cipher, string key)
     {
-        return cipher; // Temporary
+        return Encrypt(cipher, key); // Temporary
     }
 }

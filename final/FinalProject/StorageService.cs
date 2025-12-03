@@ -5,32 +5,32 @@ using System.Text.Json;
 
 public class StorageService
 {
-    private readonly string filePath = "vault.dat";
-
-    public void SaveVault(List<VaultItem> items, string key)
+    private EncryptionService _encryption = new EncryptionService();
+    public void SaveVault(List<VaultItem> items, string key, string filename)
     {
         string json = JsonSerializer.Serialize(items, new JsonSerializerOptions()
         {
-            WriteIndented = true,
-            IncludeFields = true
+            WriteIndented = true
         });
-
-        File.WriteAllText(filePath, json);
+        string encryptedJson = _encryption.Encrypt(json, key);
+        File.WriteAllText(filename, encryptedJson);
     }
 
-    public List<VaultItem> LoadVault(string key)
+    public List<VaultItem> LoadVault(string key, string filename)
     {
-        if (!File.Exists(filePath))
+        if (!File.Exists(filename))
             return new List<VaultItem>();
 
-        string json = File.ReadAllText(filePath);
+        string encryptedContent = File.ReadAllText(filename);
 
         try
         {
+            string json = _encryption.Decrypt(encryptedContent, key);
             return JsonSerializer.Deserialize<List<VaultItem>>(json);
         }
         catch
         {
+            Console.WriteLine("Failed to load vault. Password may be incorrect or file corrupted.");
             return new List<VaultItem>();
         }
     }

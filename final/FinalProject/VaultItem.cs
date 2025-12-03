@@ -1,4 +1,9 @@
 using System;
+using System.Text.Json.Serialization;
+
+[JsonDerivedType(typeof(PasswordEntry), typeDiscriminator: "password")]
+[JsonDerivedType(typeof(SecureNote), typeDiscriminator: "note")]
+[JsonDerivedType(typeof(CreditCardEntry), typeDiscriminator: "card")]
 
 public abstract class VaultItem
 {
@@ -7,4 +12,6 @@ public abstract class VaultItem
 
     public abstract string GetItemType();
     public abstract string GetMaskedDisplay();
+
+    public abstract string GetFullDisplay();
 }

@@ -4,7 +4,7 @@ class Menu
     {
         int response = 0;
 
-        while (response < 1 || response > 4)
+        while (response < 1 || response > 5)
         {
             Console.Clear();
 
@@ -13,7 +13,8 @@ class Menu
             Console.WriteLine("1. Add New Item");
             Console.WriteLine("2. View All Items");
             Console.WriteLine("3. Search Items");
-            Console.WriteLine("4. Save & Exit");
+            Console.WriteLine("4. Save Vault");
+            Console.WriteLine("5. Exit");
 
             try
             {
